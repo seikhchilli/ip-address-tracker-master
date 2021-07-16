@@ -1,0 +1,70 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300&display=swap');
+body{
+    min-height: 100vh;
+    font-family: 'Rubik', sans-serif;
+
+}
+
+.upper-body{
+    background-image: url("images/pattern-bg.png");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    display: flex;
+    flex-direction: column;
+    height: 35vh;
+
+}
+
+.upper-body > div{
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.heading{
+    padding-top: 1.5em;
+    padding-bottom: 1.5em;
+    color: white;
+    font-weight: 700;
+}
+
+.search-box{
+    width: 40%;
+}
+
+.search-wrapper{
+    display: flex;
+}
+
+.search{
+    width: 100%;
+    font-size: 18px;
+    height: 2.5em;
+    padding-top: 1em 0 1em 0;
+    border: none;
+    outline: none;
+    border-radius: 8px;
+    border-bottom-right-radius: 0;
+    border-top-right-radius: 0;
+}
+
+input[type="text"]::placeholder {  
+                   
+    padding-left: 1em; 
+} 
+
+.submit{
+    background-color: black;
+    border: none;
+    padding-left: 1.25em;
+    padding-right: 1.25em;
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+}
+
+.lower-body{
+    height: 65vh;
+}

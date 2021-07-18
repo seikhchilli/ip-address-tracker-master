@@ -124,13 +124,15 @@ color: hsl(0, 0%, 59%) ;
     .stats-display{
         width: 90%;
         left: 5%;
-        top: 20vh;
+        top: 21vh;
     }
 
     .stats-wrapper{
         display: grid;
         grid-template-columns: auto ;
         row-gap: 1em;
+        padding-top: 1em;
+        padding-bottom: 1em;
     }
 
     .stats-wrapper > div{

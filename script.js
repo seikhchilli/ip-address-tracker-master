@@ -17,6 +17,9 @@ function mapload(){
         domain = document.getElementById("search").value;
         console.log("domain");
     }
+    else{
+        alert("Invalid IP or Domain");
+    }
 
     
 

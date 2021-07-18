@@ -68,6 +68,10 @@ body{
     border-bottom-right-radius: 14px;
 }
 
+.submit:hover{
+    background-color: hsl(0, 0%, 59%);
+}
+
 .stats-display{
    
     background-color: white;

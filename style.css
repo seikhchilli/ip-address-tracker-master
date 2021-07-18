@@ -12,10 +12,10 @@ body{
 .upper-body{
     background-image: url("images/pattern-bg.png");
     background-repeat: no-repeat;
-    background-size: 100%;
+    background-size: cover;
     display: flex;
     flex-direction: column;
-    height: 35%;
+    min-height: 35%;
 
 
 }
@@ -46,7 +46,7 @@ body{
 
     padding-top: 1em;
     padding-bottom: 1em;
-    padding-left: 1em ;
+    padding-left: 2em ;
     border: none;
     outline: none;
     border-radius: 14px;
@@ -54,11 +54,6 @@ body{
     border-top-right-radius: 0;
 }
 
-
-input[type="text"]::placeholder {  
-                   
-    padding-left: 1em; 
-}
 
 
 .submit{
@@ -73,15 +68,12 @@ input[type="text"]::placeholder {
 .stats-display{
    
     position: sticky;
-  
-    justify-content: space-between;
     background-color: white;
     width: 80%;
     position: absolute;
     left: 10%;
     top: 25%;
     z-index: 1;
-    height: 23%;
     border-radius: 14px;
 }
 
@@ -108,8 +100,53 @@ input[type="text"]::placeholder {
 color: hsl(0, 0%, 59%) ;
 }
 
+.stats-wrapper > div > h2{
+    padding-top: 0.75em;
+}
+
 #mapid{
     height: 65%;
     z-index: -1;
     
+}
+
+@media only screen and (max-width: 600px) {
+
+    #mapid{
+        height: 75%;
+    }
+
+    .search-box{
+        width: 90%;
+    }
+    .upper-body{
+        height: 25%;
+        background-size: cover;
+    }
+    .stats-display{
+        background-color: yellow;
+        width: 90%;
+        left: 5%;
+        top: 18%;
+    }
+
+    .stats-wrapper{
+        display: grid;
+        grid-template-columns: auto ;
+        row-gap: 1em;
+    }
+
+    .stats-wrapper > div{
+        text-align: center;
+        border: none;
+    }
+    .stats-wrapper > div > p{
+        padding: 0;
+    }
+
+
+    .stats-wrapper > div > h2{
+        padding: 0.25em 0 0 0;
+        
+    }
 }

@@ -1,17 +1,29 @@
 
-var ip;
+var ip, domain;
 var api_key = "at_bivtbhWLWWqSq3eNGiSeOzLDAWwM7";
 var myicon = L.icon({
     iconUrl: 'images/icon-location.svg'
 });
 var mymap;
 
+
 function mapload(){
-    ip = document.getElementById("search").value;
+    var ip, domain;
+    if (/^(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$/.test(document.getElementById("search").value )){
+        ip = document.getElementById("search").value;
+        console.log("ip");
+    }
+    else if(/^[a-zA-Z0-9][a-zA-Z0-9-]{1,61}[a-zA-Z0-9]\.[a-zA-Z]{2,}$/.test(document.getElementById("search").value)){
+        domain = document.getElementById("search").value;
+        console.log("domain");
+    }
+
+    
+
     $(function () {
         $.ajax({
             url: "https://geo.ipify.org/api/v1",
-            data: {apiKey: api_key, ipAddress: ip},
+            data: {apiKey: api_key, ipAddress: ip, domain: domain},
             success: function(data) {
                // $("body").append("<pre>"+ JSON.stringify(data,"",2)+"</pre>");
                // const mapdata = JSON.stringify(data,"",2);
@@ -21,7 +33,7 @@ function mapload(){
                 document.getElementById("timezone-stats").innerHTML = data.location.timezone;
                 document.getElementById("isp-stats").innerHTML = data.isp;
                 mymap.remove();
-                mymap = new L.map('mapid').setView([data.location.lat, data.location.lng], 13);
+                mymap = new L.map('mapid', { zoomControl: false}).setView([data.location.lat, data.location.lng], 13);
      
                  L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
                      attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
@@ -55,7 +67,7 @@ $(function () {
             document.getElementById("timezone-stats").innerHTML = data.location.timezone;
             document.getElementById("isp-stats").innerHTML = data.isp;
            
-            mymap = new L.map('mapid').setView([data.location.lat, data.location.lng], 13);
+            mymap = new L.map('mapid',{ zoomControl: false}).setView([data.location.lat, data.location.lng], 13);
  
              L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
                  attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',

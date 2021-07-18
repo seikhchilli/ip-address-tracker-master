@@ -112,19 +112,13 @@ color: hsl(0, 0%, 59%) ;
 
 @media only screen and (max-width: 600px) {
 
-    #mapid{
-        height: 75%;
-    }
-
     .search-box{
         width: 90%;
     }
     .upper-body{
-        height: 25%;
         background-size: cover;
     }
     .stats-display{
-        background-color: yellow;
         width: 90%;
         left: 5%;
         top: 18%;

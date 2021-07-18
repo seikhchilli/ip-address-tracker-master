@@ -73,7 +73,6 @@ body{
     position: absolute;
     left: 10%;
     top: 25%;
-    z-index: 1;
     border-radius: 14px;
 }
 

@@ -16,6 +16,7 @@ body{
     display: flex;
     flex-direction: column;
     min-height: 35%;
+    position: relative;
 
 
 }
@@ -34,6 +35,8 @@ body{
 
 .search-box{
     width: 40%;
+    padding-bottom: 2em;
+    z-index: 1;
 }
 
 .search-wrapper{
@@ -67,12 +70,11 @@ body{
 
 .stats-display{
    
-    position: sticky;
     background-color: white;
     width: 80%;
     position: absolute;
     left: 10%;
-    top: 25%;
+    top: 28%;
     border-radius: 14px;
 }
 
@@ -114,13 +116,11 @@ color: hsl(0, 0%, 59%) ;
     .search-box{
         width: 90%;
     }
-    .upper-body{
-        background-size: cover;
-    }
+
     .stats-display{
         width: 90%;
         left: 5%;
-        top: 18%;
+        top: 20vh;
     }
 
     .stats-wrapper{

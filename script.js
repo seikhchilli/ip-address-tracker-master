@@ -17,6 +17,10 @@ function mapload(){
         domain = document.getElementById("search").value;
         console.log("domain");
     }
+    else if(/^[a-zA-Z0-9][a-zA-Z0-9-]{1,61}[a-zA-Z0-9]\.[a-zA-Z]{2,}\.[a-zA-Z]{2,}$/.test(document.getElementById("search").value)){
+        domain = document.getElementById("search").value;
+        console.log("domain");
+    }
     else{
         alert("Invalid IP or Domain");
     }
